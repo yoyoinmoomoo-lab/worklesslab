@@ -97,7 +97,7 @@ const SelectField = ({
   return (
     <select
       id={id}
-      className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#007AFF] focus:border-transparent text-[#222222] bg-white"
+      className="w-full rounded-lg border border-border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sea focus:border-transparent text-text-main bg-white"
       value={value}
       onChange={(e) => onChange(e.target.value)}
     >
