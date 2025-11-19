@@ -73,8 +73,14 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
     });
 
     return posts;
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error fetching blog posts:", error);
+    console.error("Error details:", {
+      message: error?.message,
+      code: error?.code,
+      status: error?.status,
+      body: error?.body,
+    });
     throw error;
   }
 }
@@ -140,8 +146,14 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPostWithBlock
       published: props.Published?.checkbox || false,
       blocks,
     };
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error fetching blog post:", error);
+    console.error("Error details:", {
+      message: error?.message,
+      code: error?.code,
+      status: error?.status,
+      body: error?.body,
+    });
     throw error;
   }
 }

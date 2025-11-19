@@ -2,6 +2,10 @@ import { notFound } from "next/navigation";
 import { getBlogPostBySlug, getAllSlugs } from "@/lib/notion-blog";
 import BlockRenderer from "@/components/blog/BlockRenderer";
 
+// 매 요청마다 데이터를 가져오도록 설정 (캐싱 비활성화)
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 function formatDate(dateString: string): string {
   if (!dateString) return "";
   try {

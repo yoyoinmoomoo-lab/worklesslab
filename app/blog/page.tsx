@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { getBlogPosts } from "@/lib/notion-blog";
 
+// 매 요청마다 데이터를 가져오도록 설정 (캐싱 비활성화)
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 function formatDate(dateString: string): string {
   if (!dateString) return "";
   try {
