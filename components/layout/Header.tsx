@@ -10,8 +10,9 @@ export default function Header() {
           worklesslab
         </Link>
         <nav className="flex gap-4 text-sm">
-          <Link href="/about">소개</Link>
-          <Link href="/tools">도구</Link>
+          <Link href="/about">About</Link>
+          <Link href="/tools">Tools</Link>
+          <Link href="/blog">Blog</Link>
         </nav>
       </div>
     </header>

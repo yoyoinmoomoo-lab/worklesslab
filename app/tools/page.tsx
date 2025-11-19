@@ -22,7 +22,7 @@ export default function ToolsPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-8">도구</h1>
+      <h1 className="text-3xl font-bold mb-8">Tools</h1>
       
       <div className="grid gap-6 md:grid-cols-2">
         {tools.map((tool) => (
