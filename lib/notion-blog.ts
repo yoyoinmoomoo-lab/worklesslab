@@ -14,6 +14,7 @@ export interface BlogPost {
   summary: string;
   createdTime: string;
   published: boolean;
+  author?: string;
 }
 
 export interface BlogPostWithBlocks extends BlogPost {
@@ -62,6 +63,10 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       const createdTimeProp = props.CreatedTime;
       const createdTime = createdTimeProp?.created_time || page.created_time || "";
 
+      // Author 추출
+      const authorProp = props.Author;
+      const author = authorProp?.select?.name || undefined;
+
       return {
         id: page.id,
         title,
@@ -69,6 +74,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
         summary,
         createdTime,
         published: props.Published?.checkbox || false,
+        author,
       };
     });
 
@@ -134,6 +140,10 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPostWithBlock
     const createdTimeProp = props.CreatedTime;
     const createdTime = createdTimeProp?.created_time || page.created_time || "";
 
+    // Author 추출
+    const authorProp = props.Author;
+    const author = authorProp?.select?.name || undefined;
+
     // Blocks 가져오기 (재귀적으로 모든 children 포함)
     const blocks = await getAllBlocks(page.id);
 
@@ -144,6 +154,7 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPostWithBlock
       summary,
       createdTime,
       published: props.Published?.checkbox || false,
+      author,
       blocks,
     };
   } catch (error: any) {

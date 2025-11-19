@@ -61,7 +61,7 @@ export default async function BlogPage() {
                   {post.title}
                 </h2>
                 <div className="text-sm text-gray-500 mb-2">
-                  {formatDate(post.createdTime)}
+                  {post.author ? `${post.author} · ${formatDate(post.createdTime)}` : formatDate(post.createdTime)}
                 </div>
                 {post.summary && (
                   <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">

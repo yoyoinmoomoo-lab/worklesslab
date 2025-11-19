@@ -70,8 +70,15 @@ export default async function BlogPostPage({
         <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[#222222]">
           {post.title}
         </h1>
-        <div className="text-sm text-gray-500 mb-4">
-          {formatDate(post.createdTime)}
+        <div className="flex items-center gap-3 mb-4">
+          {post.author && (
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200">
+              {post.author}
+            </span>
+          )}
+          <div className="text-sm text-gray-500">
+            {formatDate(post.createdTime)}
+          </div>
         </div>
         <hr className="border-gray-300" />
       </header>
