@@ -3,7 +3,7 @@
 import { useEditorStore } from "@/store/notionCoverStore";
 
 interface PreviewCanvasProps {
-  canvasRef: React.RefObject<HTMLCanvasElement | null>;
+  canvasRef: React.RefObject<HTMLCanvasElement>;
   showSafeZone: boolean;
   isRendering: boolean;
 }
