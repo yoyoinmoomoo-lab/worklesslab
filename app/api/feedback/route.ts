@@ -18,6 +18,8 @@ export async function POST(req: Request) {
         ? "전월세"
         : source === "subscription"
         ? "월구독료"
+        : source === "notioncover"
+        ? "노션커버"
         : "기타";
 
     // 하위 호환성: NOTION_FEEDBACK_SOURCE 또는 NOTION_FEEDBACK_DB 둘 다 지원

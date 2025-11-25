@@ -36,12 +36,12 @@ export default function Home() {
         </Link>
 
         <Link
-          href="/tools/covermaker"
-          className="block rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow opacity-60"
+          href="/tools/notion-cover-maker"
+          className="block rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
         >
           <h2 className="text-xl font-semibold mb-2">노션 커버 메이커</h2>
           <p className="text-sm text-gray-600">
-            Coming soon...
+            이미지를 업로드해 노션 커버에 딱 맞는 사이즈로 조정하고 다운로드하세요.
           </p>
         </Link>
       </div>

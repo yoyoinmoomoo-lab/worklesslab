@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-type FeedbackSource = "rent" | "subscription" | "other";
+type FeedbackSource = "rent" | "subscription" | "notioncover" | "other";
 
 interface FeedbackBoxProps {
   source: FeedbackSource;
